@@ -1,0 +1,83 @@
+// Заголовки, общие БЭМ блоки и прочее...
+.section-header {
+	@extend %animate;
+	// .section-header__text
+	&__text {
+		color: #6a6e77;
+		margin-bottom: em(30, 20);
+	}
+	// .section-header__title
+	&__title {
+		font-weight: 700;
+		@include adaptiveValue("font-size", 60, 30);
+		color: $darkColor;
+		line-height: math.div(70, 60);
+		max-width: 470px;
+		&_big {
+			max-width: 885px;
+		}
+	}
+
+	&_lite {
+		.section-header__text {
+			color: #e3e6ec;
+		}
+		.section-header__title {
+			color: #fff;
+		}
+	}
+}
+//========================================================================================================================================================
+%animate {
+	opacity: 0;
+	transform: translate(0px, 100px);
+	transition: all 1s;
+	.previous-section & {
+		transform: translate(0px, 100px);
+	}
+	.next-section & {
+		transform: translate(0px, -100px);
+	}
+	.active-section & {
+		opacity: 1;
+		transform: translate(0px, 0px);
+	}
+}
+//========================================================================================================================================================
+* {
+	cursor: none;
+}
+
+#cursor,
+#aura {
+	position: absolute;
+	border-radius: 50%;
+	transition: transform 0.5s cubic-bezier(0.67, -0.83, 0.39, 1.69), opacity 0.2s cubic-bezier(0.67, -0.83, 0.39, 1.69);
+	user-select: none;
+	pointer-events: none;
+	z-index: 10000;
+	&.hidden {
+		transform: scale(0.01);
+	}
+}
+#cursor {
+	width: 8px;
+	height: 8px;
+	background-color: rgba($color: #1c1f25, $alpha: 0.8);
+	transform: scale(1);
+	&.active {
+		transform: scale(0);
+	}
+}
+#aura {
+	width: 46px;
+	height: 46px;
+	border: 1px solid rgba($color: #1c1f25, $alpha: 0.5);
+	transform: translate(4px, 4px);
+	background-color: rgba($color: #e3e6ec, $alpha: 0.2);
+	transform: scale(1);
+	&.active {
+		border: 1.2px solid rgba($color: #1c1f25, $alpha: 0.8);
+		transform: scale(0.5);
+	}
+}
