@@ -1,7 +1,9 @@
 import { gsap } from "gsap";
+import { isMobile } from "../files/functions.js";
 
 
 document.addEventListener('DOMContentLoaded', () => {
+
 
 	document.body.addEventListener('mousemove', (e) => {
 		mouseCoord(e);
@@ -16,6 +18,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	let mouseY = 0;
 	let posX = 0;
 	let posY = 0;
+
+	if (isMobile.any()) {
+		cursor.hidden = true;
+		follower.hidden = true;
+	} else {
+		cursor.hidden = false;
+		follower.hidden = false;
+
+	}
 
 	function mouseCoord(e) {
 		mouseX = e.pageX;
