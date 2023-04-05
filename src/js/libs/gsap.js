@@ -3,15 +3,17 @@ import { isMobile } from "../files/functions.js";
 
 
 document.addEventListener('DOMContentLoaded', () => {
+	const cursor = document.getElementById('cursor');
+	const follower = document.getElementById('aura');
+	const bullets = document.querySelectorAll('.fp-bullet');
+
 	if (isMobile.any()) {
 		cursor.hidden = true;
 		follower.hidden = true;
 	} else {
 		cursor.hidden = false;
 		follower.hidden = false;
-		const cursor = document.getElementById('cursor');
-		const follower = document.getElementById('aura');
-		const bullets = document.querySelectorAll('.fp-bullet');
+
 		let mouseX = 0;
 		let mouseY = 0;
 		let posX = 0;
