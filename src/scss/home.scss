@@ -762,6 +762,7 @@
 		@media (max-width: $mobile) {
 			flex-direction: column-reverse;
 			align-items: flex-start;
+			justify-content: flex-start;
 			padding-bottom: 60px;
 			padding-top: 60px;
 			&::before {
@@ -832,7 +833,7 @@
 		min-height: 100%;
 		align-items: center;
 		@media (max-width: $mobile) {
-			padding: 0;
+			padding: 0 !important;
 			flex-direction: column;
 		}
 	}
