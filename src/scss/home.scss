@@ -356,7 +356,7 @@
 			gap: 50px;
 		}
 		@media (max-width: $mobile) {
-			padding: 30px 0 100px;
+			padding: 60px 15px 100px;
 		}
 	}
 	// .section-6__header
@@ -836,6 +836,9 @@
 			padding: 0 !important;
 			flex-direction: column;
 		}
+		@media (max-width: $mobileSmall) {
+			justify-content: center;
+		}
 	}
 	// .section-12__body
 	&__body {
@@ -859,6 +862,11 @@
 			min-width: 100%;
 			display: flex;
 			align-items: center;
+			padding-bottom: 100px;
+			padding-top: 100px;
+		}
+		@media (max-width: $mobileSmall) {
+			justify-content: center;
 		}
 	}
 	// .section-12__image
@@ -879,6 +887,12 @@
 		z-index: 1;
 		@media (max-width: $mobile) {
 			gap: 20px;
+			flex: 1 1 auto;
+		}
+		@media (max-width: $mobileSmall) {
+			flex-direction: column;
+			justify-content: center;
+			gap: 30px;
 		}
 	}
 	// .section-12__item

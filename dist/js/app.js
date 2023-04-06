@@ -3992,6 +3992,10 @@
                 cursor.classList.remove("hidden");
                 follower.classList.remove("hidden");
             }));
+            document.body.addEventListener("mouseout", (() => {
+                cursor.classList.add("hidden");
+                follower.classList.add("hidden");
+            }));
             function mouseCoord(e) {
                 mouseX = e.pageX;
                 mouseY = e.pageY;
@@ -4027,10 +4031,6 @@
                     follower.classList.remove("active");
                 }));
             }
-            document.body.addEventListener("mouseout", (() => {
-                cursor.classList.add("hidden");
-                follower.classList.add("hidden");
-            }));
         }
     }));
     window.addEventListener("load", windowLoad);
